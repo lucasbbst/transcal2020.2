@@ -1,0 +1,33 @@
+clear all;
+clc;
+
+%CONSIDERACOES
+%resistencia conv - cond - conv
+%conducao unidimensional
+%regime permanente
+%desconsiderar a radiacao
+
+%DADOS
+L = 0.008;    %[m] espessura
+k = 0.78;     %[W/mK]
+alt = 0.8;    %[m]
+larg = 1.5;   %[m]
+A = alt*larg; %[m2] secao da parede
+Tinf1 = 24;   %[ºC]
+h1 = 10;      %[W/m2K]
+Tinf2 = - 9; %[ºC]
+h2 = 40;      %[W/m2K]
+
+%Resistencia total
+R = (1/(h1*A)) + (L/(k*A)) + (1/(h2*A));
+
+%Taxa de calor
+q = (Tinf1 - Tinf2)/R;
+
+%Temperatura T1
+T1 = Tinf1 - (q/(h1*A));
+
+disp(['Taxa de calor:' ])
+disp([num2str(q) ' W'])
+disp(['Temperatura T1 = ' ])
+disp([num2str(T1) ' ºC'])
