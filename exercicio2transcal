@@ -1,0 +1,29 @@
+clear all;
+clc;
+
+%CONSIDERACOES
+%parede plana
+%conducao unidimensional
+%regime permanente
+%sem geração de energia
+%fluxo de calor constante
+
+%DADOS
+L = 0.2; %[m] espessura
+k = 1.2; %[W/mK]
+A = 15; %[m2] secao da parede
+T1 = 112; %[ºC]
+T2 = 58; %[ºC]
+xlinha = 0.1; %[m]
+
+%LEI DE FOURIER
+qx = - (k*A/L)*(T2-T1);
+
+%como fluxo e' constante, a distribuicao e' linear
+%T em xlinha
+Tlinha = T1 - ((qx*xlinha)/(k*A));
+
+disp(['Valor da temperatura em x = ' num2str(xlinha) ' m:'])
+disp([num2str(Tlinha) ' ºC'])
+disp(['Taxa de calor através da parede:' ])
+disp([num2str(qx) ' W'])
