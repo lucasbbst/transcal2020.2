@@ -13,9 +13,12 @@ k = 0.78;     %[W/mK]
 alt = 0.8;    %[m]
 larg = 1.5;   %[m]
 A = alt*larg; %[m2] secao da parede
-Tinf1 = 24;   %[ºC]
+
+%interior
+Tinf1 = 18;   %[ºC]
 h1 = 10;      %[W/m2K]
-Tinf2 = - 9; %[ºC]
+%exterior
+Tinf2 = - 12; %[ºC]
 h2 = 40;      %[W/m2K]
 
 %Resistencia total
