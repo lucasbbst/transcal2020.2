@@ -1,0 +1,19 @@
+clear all;
+clc;
+
+%questionário 06 - 01/04/2021
+
+D = 0.01;                             %[m]
+Tb = 650;                             %[ºC]
+Tinf = 25;                            %[ºC]
+h = 10;                               %[W/m^2K]
+kcobre = 379;                         %[W/mK]
+
+%perimetro
+P = pi*D;                             %[m]
+%area transversal
+At = pi*(D^2)/4;                      %[m^2]
+
+q = sqrt(h*P*kcobre*At)*(Tb - Tinf);  %W
+
+qaleta = 2*q                          %duas barras
